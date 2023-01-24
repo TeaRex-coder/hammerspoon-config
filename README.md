@@ -1,7 +1,7 @@
 # Hammerspoon Config
 My Configuration file for [Hammerspoon](https://github.com/Hammerspoon/hammerspoon).
 
-## Reuirements
+## Requirements
 Install Hammerspoon
 `$ brew install --cask hammerspoon`
 
