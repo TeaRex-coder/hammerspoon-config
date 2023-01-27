@@ -48,7 +48,7 @@ hs.hotkey.bind(hyper, "S", function()
 hs.application.open('Slack.app')
 end)
 
-    --open Slack hyper + z
+    --open Zoom hyper + z
 hs.hotkey.bind(hyper, "Z", function()
 hs.application.open('zoom.us.app')
 end)
