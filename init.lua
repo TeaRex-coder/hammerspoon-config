@@ -57,3 +57,15 @@ end)
 hs.hotkey.bind(hyper, "Z", function()
 hs.application.open('zoom.us.app')
 end)
+
+    --open new Slack instance cmd + shift + n
+local function openSlack()
+   hs.execute("open -n /Applications/Slack.app")
+end
+
+hs.hotkey.bind({"cmd", "shift"}, "n", function()
+  local app = hs.application.frontmostApplication()
+  if app:title() == "Slack" then
+    openSlack()
+  end
+end)
