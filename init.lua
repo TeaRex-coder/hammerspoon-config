@@ -33,6 +33,11 @@ hs.hotkey.bind(hyper, "K", function()
     hs.application.open('Keychain Access.app')
 end)
 
+    --open Keychain hyper + k
+hs.hotkey.bind(hyper, "K", function()
+    hs.application.open('Keychain Access.app')
+end)
+
     --open Arc hyper + a
 hs.hotkey.bind(hyper, "A", function()
 hs.application.open('Arc.app')
@@ -48,7 +53,7 @@ hs.hotkey.bind(hyper, "S", function()
 hs.application.open('Slack.app')
 end)
 
-    --open Zoom hyper + z
+    --open Notion hyper + n
 hs.hotkey.bind(hyper, "Z", function()
 hs.application.open('zoom.us.app')
 end)
