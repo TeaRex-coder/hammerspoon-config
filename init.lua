@@ -33,11 +33,6 @@ hs.hotkey.bind(hyper, "K", function()
     hs.application.open('Keychain Access.app')
 end)
 
-    --open Keychain hyper + k
-hs.hotkey.bind(hyper, "K", function()
-    hs.application.open('Keychain Access.app')
-end)
-
     --open Arc hyper + a
 hs.hotkey.bind(hyper, "A", function()
 hs.application.open('Arc.app')
@@ -53,19 +48,52 @@ hs.hotkey.bind(hyper, "S", function()
 hs.application.open('Slack.app')
 end)
 
-    --open Notion hyper + n
-hs.hotkey.bind(hyper, "Z", function()
-hs.application.open('zoom.us.app')
-end)
-
     --open new Slack instance cmd + shift + n
 local function openSlack()
    hs.execute("open -n /Applications/Slack.app")
 end
 
-hs.hotkey.bind({"cmd", "shift"}, "n", function()
+hs.hotkey.bind({"ctrl", "shift"}, "n", function()
   local app = hs.application.frontmostApplication()
   if app:title() == "Slack" then
     openSlack()
   end
 end)
+
+    --open Zoom hyper + Z
+hs.hotkey.bind(hyper, "Z", function()
+hs.application.open('zoom.us.app')
+end)
+
+    --open OBS hyper + O
+hs.hotkey.bind(hyper, "O", function()
+hs.application.open('OBS.app')
+end)
+
+    --open Notion hyper + N
+hs.hotkey.bind(hyper, "N", function()
+hs.application.open('Notion.app')
+end)
+
+    --toggle between dns servers
+dns1 = "10.0.0.25"
+dns2 = "1.1.1.1"
+
+local dns = dns1
+
+local function setDNS(dnsServer)
+   hs.execute("networksetup -setdnsservers Wi-Fi " .. dnsServer)
+end
+
+local function toggleDNS()
+   if dns == dns1 then
+      dns = dns2
+      hs.alert.show("DNS Cloudflare")
+   else
+      dns = dns1
+      hs.alert.show("DNS Pi-Hole")
+   end
+   setDNS(dns)
+end
+
+hs.hotkey.bind(hyper, "d", toggleDNS)
