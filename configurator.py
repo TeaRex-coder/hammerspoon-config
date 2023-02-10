@@ -1,6 +1,6 @@
 import os
 
-file_path = os.path.expanduser("~/.hammerspoon/init-extra.lua")
+file_path = os.path.expanduser("~/.hammerspoon/init.lua")
 header = """--notify user during config reload
 hs.alert.show("Hammerspoon Config Loaded")
 
@@ -52,7 +52,7 @@ end
       f.write(dns_content)
 
 if os.path.exists(file_path):
-  choice = input("init-extra.lua already exists. Enter 1 to erase and restart, 2 to add new macros: ")
+  choice = input("init.lua already exists. Enter 1 to erase and restart, 2 to add new macros: ")
   if choice == "1":
     with open(file_path, "w") as f:
       f.write(header)
@@ -71,4 +71,4 @@ while True:
   else:
     print("Invalid choice. Try again.")
 
-print("init-extra.lua saved in ~/.hammerspoon")
+print("init.lua saved in ~/.hammerspoon")
