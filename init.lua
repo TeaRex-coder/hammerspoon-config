@@ -5,7 +5,8 @@ hs.alert.show("Hammerspoon Config Loaded")
 hyper = {"cmd", "alt", "ctrl"}
 
 --reload binding
-hs.hotkey.bind(hyper, "R", hs.reload)
+hs.hotkey.bind(hyper, "\\", hs.reload)
+
 
 --application launching
     --open Finder hyper + f
@@ -48,18 +49,6 @@ hs.hotkey.bind(hyper, "S", function()
 hs.application.open('Slack.app')
 end)
 
-    --open new Slack instance cmd + shift + n
-local function openSlack()
-   hs.execute("open -n /Applications/Slack.app")
-end
-
-hs.hotkey.bind({"ctrl", "shift"}, "n", function()
-  local app = hs.application.frontmostApplication()
-  if app:title() == "Slack" then
-    openSlack()
-  end
-end)
-
     --open Zoom hyper + Z
 hs.hotkey.bind(hyper, "Z", function()
 hs.application.open('zoom.us.app')
@@ -75,7 +64,37 @@ hs.hotkey.bind(hyper, "N", function()
 hs.application.open('Notion.app')
 end)
 
-    --toggle between dns servers
+    --open Replit hyper + R
+hs.hotkey.bind(hyper, "R", function()
+hs.application.open('Replit.app')
+end)
+
+
+--miscelaneas
+    -- open new Slack window
+local function SlackWindow()
+    hs.execute("open -n /Applications/Slack.app")
+  end
+  
+hs.hotkey.bind({"ctrl", "shift"}, "n", function()
+    local slack = hs.application.get("Slack")
+    if slack ~= nil and slack:isFrontmost() then
+      SlackWindow()
+    end
+  end)
+
+    -- macbook display smaller
+hs.hotkey.bind(hyper, "[", function()
+  hs.execute("/usr/local/bin/displayplacer 'id:37D8832A-2D66-02CA-B9F7-8F30A301B230 res:2048x1280 hz:60 color_depth:8 scaling:off origin:(-2048,0) degree:0'")
+end)
+
+    -- macbook display smaller
+hs.hotkey.bind(hyper, "]", function()
+    hs.execute("/usr/local/bin/displayplacer 'id:37D8832A-2D66-02CA-B9F7-8F30A301B230 res:1680x1050 hz:60 color_depth:8 scaling:on origin:(0,0) degree:0'")
+end)
+
+
+    --toggle between dns serverss
 dns1 = "10.0.0.25"
 dns2 = "1.1.1.1"
 
