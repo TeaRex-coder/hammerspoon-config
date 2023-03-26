@@ -17,7 +17,7 @@ git clone https://github.com/TeaRex-coder/hammerspoon-config.git
 cd hammerspoon-config
 ```
 
-## Run The Configurator
+### Run The Configurator *(currently broken)*
 `$ python configurator.py`
 
 ## Manual Setup
