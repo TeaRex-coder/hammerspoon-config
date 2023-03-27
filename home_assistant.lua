@@ -13,7 +13,7 @@ end
 
 hs.hotkey.bind({"cmd", "ctrl"}, "1", toggleAlexBedroom)
 
---toggle alex's bedroom
+--toggle alex's desk lamp
 function toggleAlexDeskLamp()
     local url = env.HASS_URL .. "/api/services/light/toggle"
     local headers = {
