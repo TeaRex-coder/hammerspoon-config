@@ -9,7 +9,7 @@ end)
 
 --open Chrome hyper + c
 hs.hotkey.bind(hyper, "C", function()
-    hs.application.open('Chrome.app')
+    hs.application.open('Google Chrome.app')
 end)
 
 --open Google Meet hyper + m
