@@ -15,7 +15,7 @@ hs.hotkey.bind(hyper, "[", function()
   hs.execute("/usr/local/bin/displayplacer 'id:37D8832A-2D66-02CA-B9F7-8F30A301B230 res:2048x1280 hz:60 color_depth:8 scaling:off origin:(-2048,0) degree:0'")
 end)
 
--- macbook display smaller
+-- macbook display larger
 hs.hotkey.bind(hyper, "]", function()
     hs.execute("/usr/local/bin/displayplacer 'id:37D8832A-2D66-02CA-B9F7-8F30A301B230 res:1680x1050 hz:60 color_depth:8 scaling:on origin:(0,0) degree:0'")
 end)
